@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	let card2 = null;
 	let cardsFlipped = 0;
 	let currentScore = 0;
+	let enableClick = true;
 	let lowScore = localStorage.getItem("low-score");
 
 	if (lowScore) {
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		this.sound.src = src;
 		this.sound.setAttribute("preload", "auto");
 		this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
+		this.sound.style.display = "none";
 		document.body.appendChild(this.sound);
 		this.play = function () {
 			this.sound.play();
@@ -34,21 +35,22 @@ document.addEventListener("DOMContentLoaded", function () {
 		};
 	}
 
-  function bgMusic(){
-    var bgMusic = new sound("sounds/nCardBGMusic.mp3");
-    bgMusic.play();
-    bgMusic.sound.loop = true;
-  }
+	function bgMusic() {
+		var bgMusic = new sound("sounds/nCardBGMusic.mp3");
+		bgMusic.play();
+		bgMusic.sound.loop = true;
+	}
 
 	function handleCardClick(e) {
+		if (!enableClick) return;
 		if (!e.target.classList.contains("front")) return;
 
 		// let currentCard = e.target.parentElement;
 		let currentCard = e.target.closest(".game-card");
 
 		if (!card1 || !card2) {
-      let selectSound = new sound("sounds/selectCardSound.mp3");
-      selectSound.play();
+			let selectSound = new sound("sounds/selectCardSound.mp3");
+			selectSound.play();
 			if (!currentCard.classList.contains("flipped")) {
 				setScore(currentScore + 1);
 			}
@@ -62,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			let gif2 = card2.children[1].children[0].src;
 
 			if (gif1 === gif2) {
-        let matchSound = new sound("sounds/matchSound.mp3");
-        matchSound.play();
+				let matchSound = new sound("sounds/matchSound.mp3");
+				matchSound.play();
 				bg.classList.toggle("match");
 				setTimeout(() => {
 					bg.classList.toggle("match");
@@ -74,13 +76,15 @@ document.addEventListener("DOMContentLoaded", function () {
 				card1 = null;
 				card2 = null;
 			} else {
-        let noMatchSound = new sound("sounds/noMatchSound.mp3");
-        noMatchSound.play();
+				let noMatchSound = new sound("sounds/noMatchSound.mp3");
+				noMatchSound.play();
+				enableClick = false;
 				setTimeout(function () {
 					card1.classList.remove("flipped");
 					card2.classList.remove("flipped");
 					card1 = null;
 					card2 = null;
+					enableClick = true;
 				}, 1000);
 			}
 		}
@@ -89,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	function startGame() {
-    bgMusic();
+		bgMusic();
 		setScore(0);
 		start.classList.add("playing");
 		let indices = [];
