@@ -1,4 +1,9 @@
 /* Custom fonts */
+* {
+	padding: 0;
+	margin: 0;
+}
+
 @font-face {
 	font-family: nintend;
 	src: url(fonts/nintend.ttf);
@@ -13,15 +18,14 @@
 #preload-01 { background: url(imgs/bgFramesWithPurp.gif) no-repeat -9999px -9999px; }
 
 body {
-	background-color: #c8efff;
-	background: url(imgs/bgFinal.png) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	box-sizing: border-box;
-	overflow: hidden;
-}
+	margin:0;
+	padding:0;
+	/* overflow:hidden; */
+  }
+  
+canvas {
+	display:block;
+  }
 
 .match {
 	background: url(imgs/bgFramesWithPurp.gif) no-repeat center center fixed;

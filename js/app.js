@@ -1,3 +1,42 @@
+let loader = PIXI.Loader.shared;
+
+let app = new PIXI.Application({
+	width: 1920, // default: 800
+	height: 1080, // default: 600
+	antialias: false, // default: false
+	transparent: false, // default: false
+	resolution: 1, // default: 1
+});
+app.renderer.view.style.position = "absolute";
+app.renderer.view.style.display = "block";
+// app.renderer.autoResize = true;
+app.renderer.resize(window.innerWidth, window.innerHeight);
+document.body.appendChild(app.view);
+app.renderer.backgroundColor = 0x39217b;
+
+// PIXI.loader.add("imgs/sprites.json").load(setup);
+loader.add("imgs/sprites.json").load(setup);
+
+function setup() {
+	let sheet = loader.resources["imgs/sprites.json"].spritesheet;
+	let background = new PIXI.Sprite(sheet.textures["bgFinal.png"]);
+	background.scale.x = 0.79;
+	background.scale.y = 0.8;
+
+	app.stage.addChild(background);
+	// create an animated sprite
+	Card = new PIXI.AnimatedSprite(sheet.animations["cardFlip"]);
+    // set speed, start playback and add it to the stage
+    Card.animationSpeed = 0.10; 
+	Card.play();
+	Card.x = 800;
+	Card.y = 400;
+	Card.scale.x = 0.5;
+	Card.scale.y = 0.5;
+    app.stage.addChild(Card);
+}
+
+// Game logic:
 document.addEventListener("DOMContentLoaded", function () {
 	const cards = document.querySelectorAll(".game-card");
 	const bg = document.querySelector("body");
