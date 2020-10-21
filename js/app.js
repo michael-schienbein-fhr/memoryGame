@@ -24,43 +24,49 @@ function setup() {
 	background.scale.y = 0.8;
 	cardFlipOver = new PIXI.AnimatedSprite(sheet.animations["cardFlipOver"]);
 	cardFlipOver.interactive = true;
-	cardFlipOver.scale.x = 0.5;
-	cardFlipOver.scale.y = 0.5;
+	cardFlipOver.scale.x = 0.7;
+	cardFlipOver.scale.y = 0.7;
 	cardFlipOver.x = 700;
 	cardFlipOver.y = 350;
 	cardFlipOver.animationSpeed = 0.12;
 	cardFlipOver.loop = false;
+	// cardFlipOver.gotoStop(0);
 	cardFlipBack = new PIXI.AnimatedSprite(sheet.animations["cardFlipBack"]);
 	cardFlipBack.interactive = true;
-	cardFlipBack.scale.x = 0.5;
-	cardFlipBack.scale.y = 0.5;
+	cardFlipBack.scale.x = 0.7;
+	cardFlipBack.scale.y = 0.7;
 	cardFlipBack.x = 700;
 	cardFlipBack.y = 350;
 	cardFlipBack.animationSpeed = 0.12;
 	cardFlipBack.loop = false;
+	
 
 	app.stage.addChild(background);
+	app.stage.addChild(cardFlipBack);
 	app.stage.addChild(cardFlipOver);
+	cardFlipBack.visible = false;
 
 	cardFlipOver.on("mousedown", onCardClickFront);
 	cardFlipBack.on("mousedown", onCardClickBack);
 	function onCardClickFront() {
-		cardFlipOver.play();
-		let id = setInterval(() => {
-			cardFlipOver.visible = false;
-			app.stage.addChild(cardFlipBack);
-		}, 700);
-		console.log(id);
-		cardFlipBack.visible = true;
+		if (cardFlipOver.visible) {
+			cardFlipOver.play();
+			cardFlipOver.onComplete = () => {
+				cardFlipOver.gotoAndStop(0);
+				cardFlipOver.visible = false;
+				cardFlipBack.visible = true;
+			};
+		}
 	}
 	function onCardClickBack() {
 		cardFlipBack.play();
-		let id = setInterval(() => {
-			cardFlipBack.visible = false;
-			// app.stage.addChild(cardFlipOver);
-		}, 700);
-		console.log(id);
-		cardFlipOver.visible = true;
+		if (cardFlipBack.visible) {
+			cardFlipBack.onComplete = () => {
+				cardFlipBack.gotoAndStop(0);
+				cardFlipBack.visible = false;
+				cardFlipOver.visible = true;
+			};
+		}
 	}
 }
 
