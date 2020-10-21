@@ -22,18 +22,46 @@ function setup() {
 	let background = new PIXI.Sprite(sheet.textures["bgFinal.png"]);
 	background.scale.x = 0.79;
 	background.scale.y = 0.8;
+	cardFlipOver = new PIXI.AnimatedSprite(sheet.animations["cardFlipOver"]);
+	cardFlipOver.interactive = true;
+	cardFlipOver.scale.x = 0.5;
+	cardFlipOver.scale.y = 0.5;
+	cardFlipOver.x = 700;
+	cardFlipOver.y = 350;
+	cardFlipOver.animationSpeed = 0.12;
+	cardFlipOver.loop = false;
+	cardFlipBack = new PIXI.AnimatedSprite(sheet.animations["cardFlipBack"]);
+	cardFlipBack.interactive = true;
+	cardFlipBack.scale.x = 0.5;
+	cardFlipBack.scale.y = 0.5;
+	cardFlipBack.x = 700;
+	cardFlipBack.y = 350;
+	cardFlipBack.animationSpeed = 0.12;
+	cardFlipBack.loop = false;
 
 	app.stage.addChild(background);
-	// create an animated sprite
-	Card = new PIXI.AnimatedSprite(sheet.animations["cardFlip"]);
-    // set speed, start playback and add it to the stage
-    Card.animationSpeed = 0.10; 
-	Card.play();
-	Card.x = 800;
-	Card.y = 400;
-	Card.scale.x = 0.5;
-	Card.scale.y = 0.5;
-    app.stage.addChild(Card);
+	app.stage.addChild(cardFlipOver);
+
+	cardFlipOver.on("mousedown", onCardClickFront);
+	cardFlipBack.on("mousedown", onCardClickBack);
+	function onCardClickFront() {
+		cardFlipOver.play();
+		let id = setInterval(() => {
+			cardFlipOver.visible = false;
+			app.stage.addChild(cardFlipBack);
+		}, 700);
+		console.log(id);
+		cardFlipBack.visible = true;
+	}
+	function onCardClickBack() {
+		cardFlipBack.play();
+		let id = setInterval(() => {
+			cardFlipBack.visible = false;
+			// app.stage.addChild(cardFlipOver);
+		}, 700);
+		console.log(id);
+		cardFlipOver.visible = true;
+	}
 }
 
 // Game logic:

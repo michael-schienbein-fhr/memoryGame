@@ -8,7 +8,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":1920,"h":1080},
 	"sourceSize": {"w":1920,"h":1080}
 },
-"card1up.png":
+"cardFlipBack_01.png":
 {
 	"frame": {"x":1,"y":1083,"w":300,"h":420},
 	"rotated": true,
@@ -16,7 +16,47 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":420},
 	"sourceSize": {"w":300,"h":420}
 },
-"cardBack.png":
+"cardFlipBack_02.png":
+{
+	"frame": {"x":845,"y":1083,"w":194,"h":385},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":0,"w":194,"h":385},
+	"sourceSize": {"w":300,"h":420}
+},
+"cardFlipBack_03.png":
+{
+	"frame": {"x":845,"y":1279,"w":122,"h":385},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":71,"y":0,"w":122,"h":385},
+	"sourceSize": {"w":300,"h":420}
+},
+"cardFlipBack_04.png":
+{
+	"frame": {"x":1,"y":1385,"w":26,"h":385},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":119,"y":0,"w":26,"h":385},
+	"sourceSize": {"w":300,"h":420}
+},
+"cardFlipBack_05.png":
+{
+	"frame": {"x":1232,"y":1279,"w":122,"h":385},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":71,"y":0,"w":122,"h":385},
+	"sourceSize": {"w":300,"h":420}
+},
+"cardFlipBack_06.png":
+{
+	"frame": {"x":1232,"y":1083,"w":194,"h":385},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":0,"w":194,"h":385},
+	"sourceSize": {"w":300,"h":420}
+},
+"cardFlipBack_07.png":
 {
 	"frame": {"x":423,"y":1083,"w":300,"h":420},
 	"rotated": true,
@@ -24,63 +64,31 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":420},
 	"sourceSize": {"w":300,"h":420}
 },
-"cardFlipBack_01.png":
-{
-	"frame": {"x":845,"y":1083,"w":194,"h":385},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":35,"y":0,"w":194,"h":385},
-	"sourceSize": {"w":300,"h":420}
-},
-"cardFlipBack_02.png":
-{
-	"frame": {"x":845,"y":1279,"w":122,"h":385},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":71,"y":0,"w":122,"h":385},
-	"sourceSize": {"w":300,"h":420}
-},
-"cardFlipBack_03.png":
-{
-	"frame": {"x":1,"y":1385,"w":26,"h":385},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":119,"y":0,"w":26,"h":385},
-	"sourceSize": {"w":300,"h":420}
-},
-"cardFlipBack_04.png":
-{
-	"frame": {"x":1232,"y":1279,"w":122,"h":385},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":71,"y":0,"w":122,"h":385},
-	"sourceSize": {"w":300,"h":420}
-},
-"cardFlipBack_05.png":
-{
-	"frame": {"x":1232,"y":1083,"w":194,"h":385},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":35,"y":0,"w":194,"h":385},
-	"sourceSize": {"w":300,"h":420}
-},
 "cardFlipOver_01.png":
 {
-	"frame": {"x":1232,"y":1083,"w":194,"h":385},
+	"frame": {"x":423,"y":1083,"w":300,"h":420},
 	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":35,"y":0,"w":194,"h":385},
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":420},
 	"sourceSize": {"w":300,"h":420}
 },
 "cardFlipOver_02.png":
 {
+	"frame": {"x":1232,"y":1083,"w":194,"h":385},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":0,"w":194,"h":385},
+	"sourceSize": {"w":300,"h":420}
+},
+"cardFlipOver_03.png":
+{
 	"frame": {"x":1232,"y":1279,"w":122,"h":385},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":71,"y":0,"w":122,"h":385},
 	"sourceSize": {"w":300,"h":420}
 },
-"cardFlipOver_03.png":
+"cardFlipOver_04.png":
 {
 	"frame": {"x":1,"y":1385,"w":26,"h":385},
 	"rotated": true,
@@ -88,7 +96,7 @@
 	"spriteSourceSize": {"x":119,"y":0,"w":26,"h":385},
 	"sourceSize": {"w":300,"h":420}
 },
-"cardFlipOver_04.png":
+"cardFlipOver_05.png":
 {
 	"frame": {"x":845,"y":1279,"w":122,"h":385},
 	"rotated": true,
@@ -96,17 +104,25 @@
 	"spriteSourceSize": {"x":71,"y":0,"w":122,"h":385},
 	"sourceSize": {"w":300,"h":420}
 },
-"cardFlipOver_05.png":
+"cardFlipOver_06.png":
 {
 	"frame": {"x":845,"y":1083,"w":194,"h":385},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":35,"y":0,"w":194,"h":385},
 	"sourceSize": {"w":300,"h":420}
+},
+"cardFlipOver_07.png":
+{
+	"frame": {"x":1,"y":1083,"w":300,"h":420},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":420},
+	"sourceSize": {"w":300,"h":420}
 }},
 "animations": {
-	"cardFlipBack": ["cardFlipBack_01.png","cardFlipBack_02.png","cardFlipBack_03.png","cardFlipBack_04.png","cardFlipBack_05.png"],
-	"cardFlipOver": ["cardFlipOver_01.png","cardFlipOver_02.png","cardFlipOver_03.png","cardFlipOver_04.png","cardFlipOver_05.png"]
+	"cardFlipBack": ["cardFlipBack_01.png","cardFlipBack_02.png","cardFlipBack_03.png","cardFlipBack_04.png","cardFlipBack_05.png","cardFlipBack_06.png","cardFlipBack_07.png"],
+	"cardFlipOver": ["cardFlipOver_01.png","cardFlipOver_02.png","cardFlipOver_03.png","cardFlipOver_04.png","cardFlipOver_05.png","cardFlipOver_06.png","cardFlipOver_07.png"]
 },
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",
@@ -115,6 +131,6 @@
 	"format": "RGBA8888",
 	"size": {"w":1922,"h":1412},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:1fe58ee62c17c98c34fb0c5257b9ab55:6da4944f684840f5a81004f8da46b850:1eabdf11f75e3a4fe3147baf7b5be24b$"
+	"smartupdate": "$TexturePacker:SmartUpdate:c18b3274bbf2b436c5b983fcbc6d5729:ba1390e721792a3c54799c79612a4bf3:1eabdf11f75e3a4fe3147baf7b5be24b$"
 }
 }
