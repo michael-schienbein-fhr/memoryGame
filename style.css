@@ -87,6 +87,7 @@ canvas {
 .container {
 	flex-wrap: wrap;
 	margin-top: 15%;
+	
 }
 
 .game-card-wrapper {

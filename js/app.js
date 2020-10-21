@@ -4,17 +4,15 @@ let app = new PIXI.Application({
 	width: 1920, // default: 800
 	height: 1080, // default: 600
 	antialias: false, // default: false
-	transparent: false, // default: false
+	transparent: true, // default: false
 	resolution: 1, // default: 1
 });
 app.renderer.view.style.position = "absolute";
 app.renderer.view.style.display = "block";
-// app.renderer.autoResize = true;
+app.renderer.autoResize = true;
 app.renderer.resize(window.innerWidth, window.innerHeight);
-document.body.appendChild(app.view);
 app.renderer.backgroundColor = 0x39217b;
-
-// PIXI.loader.add("imgs/sprites.json").load(setup);
+document.querySelector("#gameDiv").appendChild(app.view);
 loader.add("imgs/sprites.json").load(setup);
 
 function setup() {
@@ -30,7 +28,6 @@ function setup() {
 	cardFlipOver.y = 350;
 	cardFlipOver.animationSpeed = 0.12;
 	cardFlipOver.loop = false;
-	// cardFlipOver.gotoStop(0);
 	cardFlipBack = new PIXI.AnimatedSprite(sheet.animations["cardFlipBack"]);
 	cardFlipBack.interactive = true;
 	cardFlipBack.scale.x = 0.7;
