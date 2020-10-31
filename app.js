@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	function bgMusic() {
-		var bgMusic = new sound("sounds/nCardBGMusic.mp3");
+		let bgMusic = new sound("sounds/nCardBGMusic.mp3");
 		bgMusic.play();
 		bgMusic.sound.loop = true;
 	}
