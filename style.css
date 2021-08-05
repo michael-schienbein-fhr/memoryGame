@@ -57,8 +57,11 @@ canvas {
 	border: none;
 }
 
+.container {
+  flex-wrap: wrap;
+}
 #start {
-	height: 90vh;
+	height: 100vh;
 	font-family: "spb";
 	color: #ce29f7;
 	position: relative;
@@ -77,8 +80,7 @@ canvas {
 }
 
 #start.playing {
-	margin-top: -90vh;
-	transition
+	margin-top: -100vh;
 }
 
 #start.playing + #game {
@@ -93,15 +95,8 @@ canvas {
 	width: 100%;
 }
 
-.container {
-	flex-wrap: wrap;
-	margin-top: 15%;
-	
-}
-
 .game-card-wrapper {
 	perspective: 600px;
-	width: 75%;
 	padding-bottom: 75%;
 	position: relative;
 	margin: 1rem auto;
@@ -211,16 +206,53 @@ canvas {
 	font-size: 3rem;
 }
 
-@media (max-width: 992px) {
+@media (min-width: 320px) {
+	#title {
+		font-size: 4rem;
+	}
+
+	#current-score {
+		font-size: 3rem;
+		padding: 6.5rem 0rem 0rem 4.3rem;
+	}
+
+	.btn {
+		font-size: 2rem;
+	}
+
+	.container {
+		margin-top: 55%;
+	}
+
 	.game-card-wrapper {
-		width: 100%;
-		padding-bottom: 100%;
+		perspective: 600px;
+		width: 75%;
+		padding: 3.5rem 2.5rem 1.5rem 1.5rem;
+		position: relative;
+		margin: 1rem auto;
+	}
+	.offset-1 {
+		margin-left: 0;
+	}
+}
+@media (min-width: 576px) {
+	.container {
+		margin-top: 80%;
+	}
+}
+@media (min-width: 768px) {
+	.container {
+		margin-top: 25%;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		margin-top: 20%;
 	}
 }
 
-@media (max-width: 992px) {
-	.game-card-wrapper {
-		width: 120%;
-		padding-bottom: 120%;
+@media (min-width: 1200px) {
+	.container {
+		margin-top: 15%;
 	}
-}
+} 
