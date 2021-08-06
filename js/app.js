@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const init = function () {
 		imagesLoaded(document.body, () => {
-			// const cards = document.querySelectorAll(".game-card");
+			const cards = document.querySelectorAll(".game-card");
 			const bg = document.querySelector("body");
-			// let numCards = cards.length;
+			let numCards = cards.length;
 			let card1 = null;
 			let card2 = null;
 			let cardsFlipped = 0;
@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
 				document.getElementById("best-score").innerText = lowScore;
 			}
 
-			// for (let card of cards) {
-			// 	card.addEventListener("click", handleCardClick);
-			// }
+			for (let card of cards) {
+				card.addEventListener("click", handleCardClick);
+			}
 
 			let startBtn = document.getElementById("start-button");
 			startBtn.addEventListener("click", startGame);
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			function startGame() {
 				bgMusic();
-				// setScore(0);
+				setScore(0);
 				start.classList.add("playing");
 				game.classList.add("playing");
 				let indices = [];
@@ -106,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
 				let pairs = shuffle(indices.concat(indices));
 				for (let i = 0; i < cards.length; i++) {
 					let path = "imgs/fronts/" + pairs[i] + ".png";
-					console.log(path);
 					cards[i].children[1].children[0].src = path;
 				}
 			}
@@ -125,10 +124,10 @@ document.addEventListener("DOMContentLoaded", function () {
 				return arrayCopy;
 			}
 
-			// function setScore(newScore) {
-			// 	currentScore = newScore;
-			// 	document.getElementById("current-score").innerText = currentScore;
-			// }
+			function setScore(newScore) {
+				currentScore = newScore;
+				document.getElementById("current-score").innerText = currentScore;
+			}
 
 			function endGame() {
 				let end = document.getElementById("end");
