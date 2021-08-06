@@ -1,0 +1,465 @@
+/* Custom fonts */
+* {
+	padding: 0;
+	margin: 0;
+}
+
+@font-face {
+	font-family: nintend;
+	src: url(../fonts/nintend.ttf);
+}
+
+@font-face {
+	font-family: spb;
+	src: url(../fonts/superplumberbros.ttf);
+}
+
+body {
+	--background-color: #000000;
+	--background-color-2: #342560;
+	--background-color-3: #553e9a;
+	--text-color: #fff;
+	--link-color: #fff;
+	--link-hover-color: #fff;
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 500;
+	color: #fff;
+	color: var(--text-color);
+	background: url(../imgs/bgFinal.png) no-repeat center center fixed;
+	background-color: var(--background-color);
+	background-size: cover;
+	box-sizing: border-box;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	overflow:hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+
+/* Page Loader */
+.js .loading::before {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--background-color);
+}
+
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: calc(50% - 30px);
+	left: calc(50% - 30px);
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 10px solid var(--background-color-2);
+	border-left-color: var(--text-color);
+	animation: loaderAnim 0.8s linear infinite forwards;
+}
+
+@keyframes loaderAnim {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.match {
+	background: url(../imgs/bgFramesWithPurp.gif) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.btn {
+	background-color: #831f9c;
+	border: none;
+}
+
+.btn:hover {
+	cursor: pointer;
+	background-color: #461053;
+	border: none;
+}
+
+.container-title {
+	pointer-events: auto;
+  display: grid;
+	justify-content: center;
+	align-items: center;
+  grid-template-columns: 125px 200px 125px;
+  grid-template-rows: 300px 75px 75px;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Title Title Title"
+    "... Score ..."
+    "... Button ...";
+}
+
+.Title { 
+	grid-area: Title;
+	font-size: 8rem;
+	perspective: 600px;
+}
+
+.Title > p {
+	transform: rotateX(45deg);
+	line-height: 0.75;
+	text-align: center;
+	color: #d662f3;
+}
+
+.Score { 
+	grid-area: Score;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+
+.Button { 
+	grid-area: Button;
+	color: #fff;
+	background-color: #831f9c;
+	border: none;
+	display: block;
+	width: 100%;
+	padding: .5rem 1rem;
+	font-size: 1.25rem;
+	line-height: 1.5;
+	border-radius: .3rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+
+#start {
+	/* height: 100vh; */
+	font-family: "spb";
+	color: #ce29f7;
+	z-index: 100;
+	/* position: relative; */
+}
+
+#title {
+	font-size: 8rem;
+	perspective: 600px;
+}
+
+
+
+#start.playing {
+	visibility: hidden;
+	pointer-events: none;
+}
+
+
+.container-game {
+  pointer-events: auto;
+  display: grid;
+  justify-content: center; 
+  align-content: center; 
+  justify-items: center; 
+  align-items: center;
+	grid-template-columns: 100px 100px 100px 100px 100px; 
+  grid-template-rows: 140px 140px 140px; 
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Card1 Card2 Card3 Card4 Card5"
+    "Card6 Card7 Score Card8 Card9"
+    "Card10 Card11 Card12 Card13 Card14";
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	position: relative;
+	display: grid;
+}
+
+.content-wrap {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	min-height: 600px;
+	pointer-events: none;
+}
+
+.content--layout {
+	justify-content: center;
+	align-content: center;
+	grid-template-columns: 150px 150px 150px 150px;
+	grid-template-rows: 150px 75px 75px;
+	grid-template-areas:
+		"... title title title"
+		"author ... desc desc"
+		"author ... link link";
+}
+
+.content__title {
+	grid-area: title;
+	font-family: 'nexa_boldregular', sans-serif;
+	letter-spacing: -0.025em;
+	font-size: 8em;
+	line-height: 160px;
+	margin: 0;
+	text-transform: lowercase;
+	z-index: 10;
+	cursor: pointer;
+}
+
+/* width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto; */
+.Card1 { grid-area: Card1; }
+
+.Card2 { grid-area: Card2; }
+
+.Card3 { grid-area: Card3; }
+
+.Card4 { grid-area: Card4; }
+
+.Card5 { grid-area: Card5; }
+
+.Card6 { grid-area: Card6; }
+
+.Card7 { grid-area: Card7; }
+
+.Score { grid-area: Score; }
+
+.Card8 { grid-area: Card8; }
+
+.Card9 { grid-area: Card9; }
+
+.Card10 { grid-area: Card10; }
+
+.Card11 { grid-area: Card11; }
+
+.Card12 { grid-area: Card12; }
+
+.Card13 { grid-area: Card13; }
+
+.Card14 { grid-area: Card14; }
+
+
+
+
+#game {
+	z-index: -9999;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+#game.playing {
+	visibility:visible;
+	pointer-events: all;
+}
+
+/* #game .row {
+	width: 100%;
+} */
+
+.game-card-wrapper {
+	padding-bottom: 75%;
+	position: relative;
+}
+
+.game-card-wrapper:hover {
+	cursor: pointer;
+}
+
+.game-card {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	
+}
+
+.game-card.flipped {
+	transform: rotateY(180deg);
+}
+
+.front,
+.back {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	backface-visibility: hidden;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.front {
+	font-size: 3rem;
+}
+.front > img {
+	height: 100%;
+	width: auto;
+	font-size: 3rem;
+	pointer-events: none;
+}
+
+.back {
+	transform: rotateY(180deg);
+}
+
+.back > img {
+	height: 100%;
+	width: auto;
+}
+
+#current-score {
+	/* display: flex; */
+	justify-content: center;
+	align-items: center;
+	font-size: 4rem;
+	font-family: "spb";
+	color: #d662f3;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#current-score.game-over {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	font-size: 4rem;
+	font-family: "spb";
+	background-color: rgba(0, 0, 0, 0.75);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#end {
+	display: none;
+}
+
+#end.game-over {
+	display: flex;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.75);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	justify-content: space-around;
+	font-family: "spb";
+	text-align: center;
+}
+
+#end h1 {
+	font-size: 8rem;
+}
+
+#end h4 {
+	font-size: 3rem;
+}
+
+/* Media queries */
+@media screen and (max-width: 50em) {
+	.container-game {
+		height: auto;
+		min-height: 0;
+		display: block;
+		z-index: 1000;
+		position: absolute;
+	}
+
+	.content__home {
+		font-size: 2.7em;
+		line-height: 40px;
+	}
+
+	.content__subtitle {
+		min-height: 60px;
+		font-size: 1.5em;
+		line-height: 30px;
+		margin-top: 20px;
+		width: 90%;
+		margin: 10%;
+	}
+
+	.content__about {
+		width: 100%;
+	}
+
+	.header {
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.deco--title {
+		display: none;
+	}
+
+	.demos {
+		text-align: center;
+	}
+
+	.hide {
+		display: none;
+	}
+
+	.pagetop {
+		pointer-events: all;
+		display: inline-block;
+		padding-left: 2em;
+		padding-bottom: 2em;
+	}
+}
+
+@media screen and (max-width: 40em) {
+	.content--layout {
+		transform: scale3d(0.8, 0.8, 1);
+	}
+}
+
+@media screen and (max-width: 36em) {
+	.content--layout {
+		transform: scale3d(0.7, 0.7, 1);
+	}
+}
+
+@media screen and (max-width: 32em) {
+	.container-title {
+		transform: scale3d(0.6, 0.6, 1);
+	}
+
+	.content__author,
+	.content__desc,
+	.content__link,
+	.content__link2 {
+		font-size: 1.35em;
+	}
+}
