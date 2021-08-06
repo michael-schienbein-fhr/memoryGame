@@ -32,7 +32,6 @@ body {
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
-	overflow:hidden;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-background-size: cover;
@@ -154,8 +153,7 @@ body {
 	height: 100vh;
 	font-family: "spb";
 	color: #ce29f7;
-	z-index: 100;
-	/* position: relative; */
+	visibility: initial;
 }
 
 #title {
@@ -166,7 +164,7 @@ body {
 
 
 #start.playing {
-	margin-top: -100vh;
+	margin-bottom: -100vh;
 	visibility: hidden;
 	pointer-events: none;
 }
@@ -205,29 +203,6 @@ body {
 	width: 100%;
 	min-height: 103vh;
 	pointer-events: none;
-}
-
-.content--layout {
-	justify-content: center;
-	align-content: center;
-	grid-template-columns: 150px 150px 150px 150px;
-	grid-template-rows: 150px 75px 75px;
-	grid-template-areas:
-		"... title title title"
-		"author ... desc desc"
-		"author ... link link";
-}
-
-.content__title {
-	grid-area: title;
-	font-family: 'nexa_boldregular', sans-serif;
-	letter-spacing: -0.025em;
-	font-size: 8em;
-	line-height: 160px;
-	margin: 0;
-	text-transform: lowercase;
-	z-index: 10;
-	cursor: pointer;
 }
 
 /*  */
@@ -274,9 +249,6 @@ body {
 	pointer-events: all;
 }
 
-/* #game .row {
-	width: 100%;
-} */
 
 .game-card-wrapper {
 	padding-bottom: 75%;
@@ -397,42 +369,19 @@ body {
 }
 
 /* Media queries */
-@media screen and (max-width: 64em) {
+@media screen and (min-width: 64em) {
 	.container-title {
-		transform: scale3d(0.95, 0.95, 1);
+		transform: scale3d(0.8, 0.8, 1);
 	}
 	.container-game {
-		transform: scale3d(0.95, 0.95, 1);
+		transform: scale3d(0.8, 0.8, 1);
 	}
 	.content-wrap{
-		max-height: 100vh;
+		min-height: 102vh;
 		overflow: hidden;
 	}
 }
-@media screen and (max-width: 60em) {
-	.container-title {
-		transform: scale3d(0.90, 0.90, 1);
-	}
-	.container-game {
-		transform: scale3d(0.90, 0.90, 1);
-	}
-	.content-wrap{
-		max-height: 100vh;
-		overflow: hidden;
-	}
-}
-@media screen and (max-width: 56em) {
-	.container-title {
-		transform: scale3d(0.85, 0.85, 1);
-	}
-	.container-game {
-		transform: scale3d(0.85, 0.85, 1);
-	}
-	.content-wrap{
-		max-height: 100vh;
-		overflow: hidden;
-	}
-}
+
 @media screen and (max-width: 52em) {
 	.container-title {
 		transform: scale3d(0.8, 0.8, 1);
@@ -441,11 +390,12 @@ body {
 		transform: scale3d(0.8, 0.8, 1);
 	}
 	.content-wrap{
-		max-height: 100vh;
+		min-height: 102vh;
 		overflow: hidden;
 	}
 }
-@media screen and (max-width: 48em) {
+
+@media screen and (min-width: 48em) {
 	.container-title {
 		transform: scale3d(0.75, 0.75, 1);
 	}
